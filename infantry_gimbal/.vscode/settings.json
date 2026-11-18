@@ -1,0 +1,4 @@
+{
+  "cortex-debug.variableUseNaturalFormat": true,
+  "waveformPlotter.elfPath": "${workspaceFolder}/build/EC_C_Board.elf"
+}

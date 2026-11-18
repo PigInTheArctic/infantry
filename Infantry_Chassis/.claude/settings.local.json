@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_desktop-commander_desktop-commander__list_directory",
+      "mcp__plugin_desktop-commander_desktop-commander__start_search",
+      "mcp__plugin_desktop-commander_desktop-commander__get_more_search_results"
+    ]
+  }
+}

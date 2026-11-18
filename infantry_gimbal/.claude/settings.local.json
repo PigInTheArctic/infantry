@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_desktop-commander_desktop-commander__start_search",
+      "mcp__plugin_desktop-commander_desktop-commander__get_more_search_results",
+      "mcp__plugin_desktop-commander_desktop-commander__read_file",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(timeout 570 python3 tools/lqr_eso_ablation.py --seeds 3)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(python3 -)",
+      "Bash(tee /tmp/ablation.log)",
+      "Bash(timeout 570 python3 tools/lqr_eso_ablation.py --seeds 3 --gyro-lpf-hz 0)",
+      "Bash(tee /tmp/ablation_default.log)"
+    ]
+  }
+}

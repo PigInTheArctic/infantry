@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build (Debug)",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "--preset",
+                "Debug"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "DapLink Download",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "openocd.cfg",
+                "-c",
+                "program build/Debug/EC_C_Board.elf verify reset exit"
+            ],
+            "problemMatcher": [],
+            "dependsOn": "Build (Debug)",
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "JLink Download",
+            "command": "JFlash",
+            "args": [
+                "-openprj'C_Board.jflash'",
+                "-open'build/Debug/EC_C_Board.hex',0x8000000",
+                "-auto",
+                "-startapp",
+                "-exit"
+            ],
+            "problemMatcher": [],
+            "dependsOn": "Build (Debug)",
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
